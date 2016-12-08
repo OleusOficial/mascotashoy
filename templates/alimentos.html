@@ -1,0 +1,71 @@
+﻿$def with(form, user, products)
+<table>
+    <tr>
+        <td>
+            <!-- Static Menu I-->
+            <table>
+                <!-- Welcome -->
+                <tr>
+                    <td>
+                        <h4>Bienvenido $user[0]['user_name']</h4>
+                    </td>
+                </tr>
+                <!-- Menu -->
+                <tr style="background-color:03A200">
+                    <td>
+                        <a href="/index/$user[0]['id_user']" style="color:white">
+                            <h5 style="text-align:center">Inicio</h5>
+                        </a>
+                    </td>
+                </tr>
+                <tr style="background-color:03A200">
+                    <td>
+                        <a href="/alimentos/$user[0]['id_user']" style="color:white">
+                            <h6 style="text-align:center">Alimentos Vigentes Para Animales</h6>
+                        </a>
+                    </td>
+                </tr>
+	        <tr style="background-color:03A200">
+                    <td>
+                        <a href="/cuenta/$user[0]['id_user']" style="color:white">
+                            <h6 style="text-align:center">Cuenta</h6>
+                        </a>
+                    </td>
+                </tr>
+                <tr style="background-color:03A200">
+                    <td>
+                        <a href="/" style="color:white">
+                            <h6 style="text-align:center">Cerrar Sesión</h6>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <!-- Static Menu I-->
+        </td>
+        <!-- Content I-->
+	
+        <td style="width:60%">  
+            <p>Selecciona la Empresa y consulta los productos que tiene vigentes para el consumo animal</p>
+            <form name="main" method="post">
+                $if not form.valid:
+                    <p class="error">Informacion erronea</p>
+                $:form.render()
+                <input type="submit" value="Buscar" /></form>
+            $if products:
+                <table border="1">
+                    <th style="width:400px">Producto</th>
+                    <th style="width:150px">No. Regulación</th>
+                    <th style="width:200px">Presentación</th>
+                    $for row in products:
+                        <tr>
+                            <td>$row[2]</td>
+                            <td>$row[3]</td>
+                            <td>$row[4]</td>
+                        </tr>
+                </table> 
+        </td>
+	
+        <!-- Content I-->
+    </tr>
+
+</table>

@@ -1,0 +1,10 @@
+﻿$def with(form)
+
+<h2>Iniciar Sesión</h2>
+<form name="main" method="post">
+    $if not form.valid:
+    	<p class="error">Informacion erronea</p> 
+    $:form.render()
+    <input type="submit" value="Entrar" /></form>
+
+<a href="/register"> <p style="color:black">¿Aún no eres usuario? Registrate Aqui!!!!</p></a>

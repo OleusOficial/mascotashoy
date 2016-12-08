@@ -1,0 +1,7 @@
+﻿$def with(form)
+<h2>Registrate</h2>
+<form name="main" method="post">
+    $if not form.valid:
+    	<p class="error">Información erronea</p>
+    $:form.render()
+    <input type="submit" value="Registrarme" /></form>

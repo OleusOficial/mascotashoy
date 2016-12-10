@@ -3,9 +3,8 @@ import web
 
 class DB:
     def __init__(self): 
-        self.dba = web.database(dbn='postgres',host='ec2-54-235-72-121.compute-1.amazonaws.com',port=5432,db='d4qioabr5l1v89',user='ywqjeszicwqqrg',pw='lbbQ_-wVX-IJHHrnSEOXui1Waz')
+        self.dba = web.database(dbn='postgres',host='ec2-54-235-72-121.compute-1.amazonaws.com', port=5432 ,db='d4qioabr5l1v89',user='ywqjeszicwqqrg',pw='lbbQ_-wVX-IJHHrnSEOXui1Waz')
         self.id_user = 0
-        self.dba.li
 
 
     def validate_user(self, email, password):
